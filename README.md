@@ -95,3 +95,15 @@ Ran all test suites.
 
 This app is build in a way that the data visualisation engine can be easily swapped to others. Currently it's using server-side rendered `highcharts`. Given it's a complex and heavy library, it is slow. Other options, such as server-side rendered google charts can be much lighter and hence shorter response time.
 
+More on [src/lib/README.md](src/lib/README.md)
+
+# Notes on data extractor
+
+This app is build in a way so that data extractor can be easily defined and switch for different sits.
+
+The data extractor is a stack of functions all implements a certain interface. For example the default extractor stack is:
+
+1. First try to match the first floating point. E.g. `foo 12.34 bar` => 12.34
+2. If the previous extractor didn't extract any data, this extractor does a "softer" extraction on any integer. E.g. `foo123bar` -> 123
+
+There is no limitation on the number of extractor stack, but it may impact performance.
