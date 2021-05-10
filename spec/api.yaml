@@ -1,0 +1,42 @@
+openapi: "3.0.0"
+info:
+  version: 0.0.1
+  title: Auto charter
+  license:
+    name: MIT
+servers:
+  - url: http://127.0.0.1:3000
+paths:
+  /:
+    get:
+      summary: Read Me
+      operationId: read_me
+      responses:
+        200:
+          description: A simple explainatory.
+          content:
+            text/html:
+              schema:
+                type: string
+                minimum: 1
+  /draw:
+    get:
+      summary: Draw a graph of given url
+      operationId: draw
+      parameters:
+        - name: url
+          in: query
+          required: true
+          description: The url used to plat graph
+          example: 'https://en.wikipedia.org/wiki/Women%27s_high_jump_world_record_progression'
+          schema:
+            type: string
+            format: uri
+      responses:
+        200:
+          description: The graph.
+          content:
+            image/png:
+              schema:
+                type: string
+                format: binary
