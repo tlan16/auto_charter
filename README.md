@@ -91,7 +91,7 @@ Time:        13.671 s, estimated 17 s
 Ran all test suites.
 ```
 
-# Note on performance
+# Notes on performance
 
 This app is build in a way that the data visualisation engine can be easily swapped to others. Currently it's using server-side rendered `highcharts`. Given it's a complex and heavy library, it is slow. Other options, such as server-side rendered google charts can be much lighter and hence shorter response time.
 
