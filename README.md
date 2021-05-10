@@ -107,3 +107,5 @@ The data extractor is a stack of functions all implements a certain interface. F
 2. If the previous extractor didn't extract any data, this extractor does a "softer" extraction on any integer. E.g. `foo123bar` -> 123
 
 There is no limitation on the number of extractor stack, but it may impact performance.
+
+More on [src/services/TableReaderService.ts](src/services/TableReaderService.ts)
